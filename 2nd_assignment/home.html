@@ -24,6 +24,11 @@
 			left:200px;
 			top:200px;
 		}
+		.nameStyle{
+			font: 18pt arial;
+			outline: double;
+			background-color: #ffaa00;
+		}
 		</style>
 		<script type="text/javascript">
 			function sidebar2_onMouseOver() {
@@ -39,6 +44,22 @@
 			var x = document.createElement("div");
 			x.innerHTML = '<h2>Be yourself<h2><p>Hello  World!</p>';
 			x.className = 'myStyle';
+
+			function myname_clickon() {
+				var myname = document.getElementById("myname");
+				myname.className = "nameStyle";
+				var fname1 = document.forms["myForm"]["fname"].value;
+				if (fname1.length == 0){
+					alert ("Press a name!")
+				}
+				else{
+					myname.innerHTML =" Your name is "+document.forms["myForm"]["fname"].value;
+				}
+				
+			
+
+
+			}
 		</script>
 </head>
 
@@ -62,12 +83,7 @@
 	<main>
 		<section>
 			<h2 id="local"> Local News </h2>
-			<script type="text/javascript">
-				var x1 = prompt("Enter x1 value = ","");
-				var x2 = prompt("Enter x2 value = ","");
-				var y = (parseInt(x1)*parseInt(x2));
-				document.getElementById('local').innerHTML = "x1 =100 , x2 =200 ,  y = x1 * x2="+y;
-			</script>
+			
 			<article>
 				<header>
 					<h3> Fire Fighters Rescue Man From Building </h3>
@@ -113,10 +129,26 @@
 		<h2> Be a news reporter </h2>
 		<p> If you see news happening - Send us a Text. </p>
 	</aside>
-	<aside id = sidebar2>
+
+	<aside id="myname">
+		My Name
+	</aside>
+
+	<aside>
+		<p>
+		 Enter 
+		 <form name = "myForm" >
+		 <input type="text" name="fname">
+		 <input type = "button" value = "Submit" onclick = "myname_clickon()">
+			</form>
+		</p>
+	</aside>
+
+	<aside id="sidebar2">
 		<h2> Be a news reporter </h2>
 		<p> If you see news happening - Send us a Text. </p>
 	</aside>
+
 
 	<footer>
 		<p> Footer Information </p>
